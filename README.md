@@ -1,6 +1,6 @@
-# image-lambda
+# image-lambda (Lab 17)
 
-repo for an AWS lambda
+Repo to house a copy of an AWS lambda.
 
 ## Author: Tyler Bennett
 

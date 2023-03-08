@@ -1,12 +1,11 @@
-const { S3 } = require('aws-sdk');
-const s3 = new S3();
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
 
 exports.handler = async (event) => {
   let fileInfo = {
     Bucket: 'ttb-d51-lab17-bucket',
     Key: 'images.json',
   };
-
 
   let imageArray = null;
   try {
@@ -40,8 +39,6 @@ exports.handler = async (event) => {
     imageArray.push(metaData);
     fileInfo.Body = JSON.stringify(imageArray);
   }
-
-  // console.log(fileInfo);
   await s3.putObject(fileInfo).promise();
 
   const response = {
